@@ -1,0 +1,123 @@
+{
+  "projectType": "api-service",
+  "projectName": "PoolPal",
+  "projectDescription": "A carpooling REST API built with Python Flask and MongoDB that enables ride sharing, booking management, and user reviews.",
+  "theme": "palm",
+  "primaryColor": "#3B82F6",
+  "lightColor": "#60A5FA",
+  "darkColor": "#2563EB",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/authentication",
+              "concepts/users-and-roles",
+              "concepts/ride-lifecycle"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/setup",
+              "guides/environment-variables",
+              "guides/deployment"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Authentication",
+            "pages": [
+              "api/auth/login",
+              "api/auth/register",
+              "api/auth/verify-account",
+              "api/auth/reset-password"
+            ]
+          },
+          {
+            "group": "Users",
+            "pages": [
+              "api/users/get-user",
+              "api/users/update-user",
+              "api/users/add-driver-details",
+              "api/users/update-driver-details",
+              "api/users/upload-profile-picture"
+            ]
+          },
+          {
+            "group": "Rides",
+            "pages": [
+              "api/rides/create-ride",
+              "api/rides/get-ride",
+              "api/rides/update-ride",
+              "api/rides/search-rides"
+            ]
+          },
+          {
+            "group": "Requests",
+            "pages": [
+              "api/requests/send-request",
+              "api/requests/cancel-request",
+              "api/requests/get-requests",
+              "api/requests/accept-request"
+            ]
+          },
+          {
+            "group": "Reviews",
+            "pages": [
+              "api/reviews/review-driver",
+              "api/reviews/review-passenger"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "User registration and JWT authentication",
+    "Driver and passenger role management",
+    "Ride creation and search functionality",
+    "Real-time distance calculation using Google Distance Matrix API",
+    "Dynamic fare calculation based on distance and passengers",
+    "Ride booking request system with approval workflow",
+    "Rating and review system for drivers and passengers",
+    "Email notifications for account verification and password reset"
+  ],
+  "publicApiSurface": [
+    "POST /api/v1/users - Register a new user",
+    "POST /api/v1/users/auth_token - User login",
+    "GET /api/v1/users/{user_id} - Get user details",
+    "PUT /api/v1/users/{user_id} - Update user profile",
+    "POST /api/v1/users/{user_id}/driver - Add driver details",
+    "PUT /api/v1/users/{user_id}/driver - Update driver details",
+    "GET /api/v1/users/confirmations/{uuid} - Verify user account",
+    "POST /api/v1/users/reset_token - Generate password reset token",
+    "PUT /api/v1/users/reset_token - Reset password",
+    "POST /api/v1/users/profile_pic - Upload profile picture",
+    "GET /api/v1/users/profile_pic/{file_name} - Get profile picture",
+    "POST /api/v1/rides - Create a new ride",
+    "GET /api/v1/rides/{ride_id} - Get ride details",
+    "PUT /api/v1/rides/{ride_id} - Update ride details",
+    "POST /api/v1/rides/trips - Search for rides",
+    "POST /api/v1/rides/{ride_id}/requests - Send ride join request",
+    "PUT /api/v1/rides/{ride_id}/requests - Cancel ride request",
+    "GET /api/v1/requests - Get all user requests",
+    "POST /api/v1/requests/{user_id} - Accept passenger request",
+    "POST /api/v1/rides/{ride_id}/reviews - Review driver",
+    "POST /api/v1/rides/{ride_id}/reviews/{user_id} - Review passenger"
+  ]
+}
